@@ -58,4 +58,8 @@ class Blog(APIView):
 You can now just write your routes and decorate them with the URL and that's
 it. No longer long `url.py` file.
 
+And example app can be [here](https://github.com/RoySegall/decorated_router_demo).
+
+Look at the `routes` folder.
+
 🤘🍕
