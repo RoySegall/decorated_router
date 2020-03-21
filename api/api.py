@@ -4,7 +4,7 @@ import inspect
 import sys
 import logging
 from os import getcwd
-
+from django.urls import path
 from django.views.generic.base import View
 
 
@@ -54,15 +54,17 @@ def get_decorated_classes(routes_folder=getcwd()):
                 try:
                     routes.append({'path': obj.decorated_url_data, 'object': obj})
                 except Exception as e:
+                    # todo: Don't fail on exception.
                     logging.info(e)
 
         except Exception as e:
+            # todo: Don't fail on exception.
             logging.info(e)
 
     return routes
 
 
-def auto_register(urlpatterns, path):
+def auto_register(urlpatterns):
     routes = get_decorated_classes()
 
     for route in routes:
