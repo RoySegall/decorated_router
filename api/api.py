@@ -1,9 +1,9 @@
 import os
-from glob import glob
 import inspect
 import sys
 import logging
 from os import getcwd
+from glob import glob
 from django.urls import path
 from django.views.generic.base import View
 
@@ -68,4 +68,13 @@ def auto_register(urlpatterns):
     routes = get_decorated_classes()
 
     for route in routes:
-        urlpatterns.append(path(route['path']['path'], route['object'].as_view()))
+
+        name = route['path'].get('name', None)
+        extra = route['path'].get('extra', {})
+        url_pattern = path(
+            route['path']['path'],
+            route['object'].as_view(),
+            extra,
+            name=name,
+        )
+        urlpatterns.append(url_pattern)
