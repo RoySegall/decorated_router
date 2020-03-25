@@ -4,7 +4,7 @@ import sys
 import logging
 from os import getcwd
 from glob import glob
-from django.urls import path
+from django.urls import path, re_path
 from django.views.generic.base import View
 
 
@@ -25,7 +25,9 @@ def get_recursive_files(path, files):
 
 def get_decorated_classes(routes_folder=getcwd()):
     """
-    Get all the decorated classes.
+    Get all the decorated classes in a given path.
+
+    :param routes_folder: The folder which we need to look decorated routes.
     """
     files = []
     get_recursive_files(routes_folder, files)
@@ -65,14 +67,28 @@ def get_decorated_classes(routes_folder=getcwd()):
 
 
 def auto_register(urlpatterns):
+    """
+    Appending url patterns to the urlpatterns variable we pass from the url.py
+    file.
+    """
+
     routes = get_decorated_classes()
 
     for route in routes:
 
+        if 're_path' in route['path']:
+            # Setting the handler the pattern for a regex handler.
+            pattern = route['path']['re_path']
+            handler = re_path
+        else:
+            handler = path
+            pattern = route['path']['path']
+
+        # Setting some variables.
         name = route['path'].get('name', None)
         extra = route['path'].get('extra', {})
-        url_pattern = path(
-            route['path']['path'],
+        url_pattern = handler(
+            pattern,
             route['object'].as_view(),
             extra,
             name=name,
