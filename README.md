@@ -1,6 +1,8 @@
+[![Build Status](https://travis-ci.org/RoySegall/decorated_router.svg?branch=master)](https://travis-ci.org/RoySegall/decorated_router)
+
 # Decorated routes
 
-This is litterly magic! 🧙‍
+This is literally magic! 🧙‍
 
 ## Install
 
