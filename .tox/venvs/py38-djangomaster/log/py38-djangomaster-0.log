@@ -1,9 +1,0 @@
-action: py38-djangomaster, msg: getenv
-cwd: /Applications/MAMP/htdocs/djangoTesting/django-decorated-router/.tox/venvs
-cmd: /Users/roysegall/.virtualenvs/djangoTesting/bin/python3.8 -m virtualenv --no-download --python /Users/roysegall/.virtualenvs/djangoTesting/bin/python3.8 py38-djangomaster
-Already using interpreter /Users/roysegall/.virtualenvs/djangoTesting/bin/python3.8
-Using real prefix '/Library/Frameworks/Python.framework/Versions/3.8'
-New python executable in /Applications/MAMP/htdocs/djangoTesting/django-decorated-router/.tox/venvs/py38-djangomaster/bin/python3.8
-Also creating executable in /Applications/MAMP/htdocs/djangoTesting/django-decorated-router/.tox/venvs/py38-djangomaster/bin/python
-Installing setuptools, pip, wheel...
-done.
