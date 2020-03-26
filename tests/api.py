@@ -8,6 +8,8 @@ from decorated_router.tests.assets.blog import BlogsControllerForTests, \
 from decorated_router.tests.assets.products import ProductsController
 
 
+# This section intend for writing the default urlpatterns and register the
+# route for the tests.
 routes = get_decorated_classes(include_tests=True)
 urlpatterns = []
 auto_register(urlpatterns, routes=routes)
