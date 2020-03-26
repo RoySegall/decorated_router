@@ -1,8 +1,7 @@
 from django.test import TestCase, override_settings
 from django.urls import reverse
-
-from decorated_router.api.api import get_recursive_files, get_decorated_classes, \
-    auto_register
+from decorated_router.api.api import get_recursive_files, \
+    get_decorated_classes, auto_register
 from os import getcwd, path
 from decorated_router.tests.assets.blog import BlogsControllerForTests, \
     BlogControllerForTests
