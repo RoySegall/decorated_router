@@ -23,18 +23,26 @@ def get_recursive_files(path, files):
             get_recursive_files(directory_member, files)
 
 
-def get_decorated_classes(routes_folder=getcwd()):
+def get_decorated_classes(routes_folder=getcwd(), include_tests=False):
     """
     Get all the decorated classes in a given path.
 
     :param routes_folder: The folder which we need to look decorated routes.
         By default the value of the os.getcwd()
+
+    :param include_tests: The flag determines if a folder named 'tests' should
+        be included or not. When testing the application it should not.
     """
     files = []
     get_recursive_files(routes_folder, files)
 
     routes = []
     for file in files:
+        if not include_tests and f'{os.path.sep}tests{os.path.sep}' in file:
+            # When not in testing mod we need to skip on files which located
+            # in a test folder.
+            continue
+
         # Go over the files we got and compile an import path.
         import_path = file.replace(routes_folder + os.path.sep, '') \
             .replace('.py', '') \
@@ -75,7 +83,6 @@ def auto_register(urlpatterns):
     Appending url patterns to the urlpatterns variable we pass from the url.py
     file.
     """
-
     routes = get_decorated_classes()
 
     for route in routes:
