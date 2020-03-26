@@ -78,12 +78,13 @@ def get_decorated_classes(routes_folder=getcwd(), include_tests=False):
     return routes
 
 
-def auto_register(urlpatterns):
+def auto_register(urlpatterns, routes=None):
     """
     Appending url patterns to the urlpatterns variable we pass from the url.py
     file.
     """
-    routes = get_decorated_classes()
+    if not routes:
+        routes = get_decorated_classes()
 
     for route in routes:
 

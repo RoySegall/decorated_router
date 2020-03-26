@@ -1,10 +1,17 @@
-from django.test import TestCase
-from decorated_router.api.api import get_recursive_files, get_decorated_classes
-from os import getcwd, path
+from django.test import TestCase, override_settings
+from django.urls import reverse
 
+from decorated_router.api.api import get_recursive_files, get_decorated_classes, \
+    auto_register
+from os import getcwd, path
 from decorated_router.tests.assets.blog import BlogsControllerForTests, \
     BlogControllerForTests
 from decorated_router.tests.assets.products import ProductsController
+
+
+routes = get_decorated_classes(include_tests=True)
+urlpatterns = []
+auto_register(urlpatterns, routes=routes)
 
 
 class TestApi(TestCase):
@@ -69,3 +76,19 @@ class TestApi(TestCase):
         # Checking to the ProductsController is available in the routes.
         for route in routes:
             self.assertNotEquals(ProductsController, route['object'])
+
+    @override_settings(ROOT_URLCONF=__name__)
+    def testing_auto_register_urls(self):
+        """
+        Checking the interaction with the router.
+        """
+        self.assertEqual(
+            self.client.get('/api/test/blogs').json(),
+            {'blogs': [
+                {'id': 1, 'title': 'Nice Blog'},
+                {'id': 2, 'title': '🍕'}
+            ]}
+        )
+
+        # Checking that the reverse method works for auto register routes.
+        self.assertEquals(reverse('blogs'), '/api/test/blogs')
