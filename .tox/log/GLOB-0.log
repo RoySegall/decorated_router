@@ -34,8 +34,8 @@ copying decorated_router/api/decorators.py -> django-decorated-router-0.0.1.dev0
 copying decorated_router/management/__init__.py -> django-decorated-router-0.0.1.dev0/decorated_router/management
 copying decorated_router/migrations/__init__.py -> django-decorated-router-0.0.1.dev0/decorated_router/migrations
 copying decorated_router/tests/__init__.py -> django-decorated-router-0.0.1.dev0/decorated_router/tests
-copying decorated_router/tests/api.py -> django-decorated-router-0.0.1.dev0/decorated_router/tests
 copying decorated_router/tests/settings.py -> django-decorated-router-0.0.1.dev0/decorated_router/tests
+copying decorated_router/tests/test_api.py -> django-decorated-router-0.0.1.dev0/decorated_router/tests
 copying decorated_router/tests/assets/__init__.py -> django-decorated-router-0.0.1.dev0/decorated_router/tests/assets
 copying decorated_router/tests/assets/blog.py -> django-decorated-router-0.0.1.dev0/decorated_router/tests/assets
 copying decorated_router/tests/assets/products.py -> django-decorated-router-0.0.1.dev0/decorated_router/tests/assets
@@ -75,8 +75,8 @@ adding 'django-decorated-router-0.0.1.dev0/decorated_router/views.py'
 adding 'django-decorated-router-0.0.1.dev0/decorated_router/migrations/__init__.py'
 adding 'django-decorated-router-0.0.1.dev0/decorated_router/tests/assets'
 adding 'django-decorated-router-0.0.1.dev0/decorated_router/tests/__init__.py'
-adding 'django-decorated-router-0.0.1.dev0/decorated_router/tests/api.py'
 adding 'django-decorated-router-0.0.1.dev0/decorated_router/tests/settings.py'
+adding 'django-decorated-router-0.0.1.dev0/decorated_router/tests/test_api.py'
 adding 'django-decorated-router-0.0.1.dev0/decorated_router/tests/assets/users'
 adding 'django-decorated-router-0.0.1.dev0/decorated_router/tests/assets/__init__.py'
 adding 'django-decorated-router-0.0.1.dev0/decorated_router/tests/assets/products.py'

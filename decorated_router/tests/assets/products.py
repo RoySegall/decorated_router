@@ -1,8 +1,7 @@
 from django.http import JsonResponse
-from rest_framework.views import APIView
+from django.views import View
 
-
-class ProductsController(APIView):
+class ProductsController(View):
     def get(self, request, show_title):
         return JsonResponse({'blogs': [
             {'id': 1, 'title': 'Nice Blog'},
