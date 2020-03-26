@@ -55,7 +55,10 @@ def get_decorated_classes(routes_folder=getcwd()):
                     continue
 
                 try:
-                    routes.append({'path': obj.decorated_url_data, 'object': obj})
+                    routes.append({
+                        'path': obj.decorated_url_data,
+                        'object': obj
+                    })
                 except Exception as e:
                     # todo: Don't fail on exception.
                     logging.info(e)
