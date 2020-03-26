@@ -28,6 +28,7 @@ def get_decorated_classes(routes_folder=getcwd()):
     Get all the decorated classes in a given path.
 
     :param routes_folder: The folder which we need to look decorated routes.
+        By default the value of the os.getcwd()
     """
     files = []
     get_recursive_files(routes_folder, files)
