@@ -52,6 +52,10 @@ def get_decorated_classes(routes_folder=getcwd(), include_tests=False):
             # Import the module and inspect the members (the object which were
             # imported).
 
+            if import_path == 'setup':
+                # HUH
+                continue
+
             __import__(import_path)
 
             for name, obj in inspect.getmembers(sys.modules[import_path]):

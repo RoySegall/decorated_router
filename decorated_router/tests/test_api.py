@@ -1,12 +1,14 @@
-from django.test import TestCase, override_settings
+from os import getcwd
+from os.path import join
 from django.urls import reverse
-from decorated_router.api.api import get_recursive_files, \
-    get_decorated_classes, auto_register
-from os import getcwd, path
-from decorated_router.tests.assets.blog import BlogsControllerForTests, \
-    BlogControllerForTests
+from django.test import TestCase
+from django.test import override_settings
+from decorated_router.api.api import auto_register
+from decorated_router.api.api import get_recursive_files
+from decorated_router.api.api import get_decorated_classes
+from decorated_router.tests.assets.blog import BlogControllerForTests
 from decorated_router.tests.assets.products import ProductsController
-
+from decorated_router.tests.assets.blog import BlogsControllerForTests
 
 # This section intend for writing the default urlpatterns and register the
 # route for the tests.
@@ -18,7 +20,7 @@ auto_register(urlpatterns, routes=routes)
 class TestApi(TestCase):
 
     def setUp(self):
-        self.base_path = path.join(
+        self.base_path = join(
             getcwd(),
             'decorated_router',
             'tests',
@@ -44,10 +46,10 @@ class TestApi(TestCase):
         get_recursive_files(self.base_path, files)
 
         for expected_file in expected_files:
-            joined_path = path.join(self.base_path, path.join(*expected_file))
+            joined_path = join(self.base_path, join(*expected_file))
             self.assertIn(joined_path, files)
 
-        self.assertEquals(len(files), len(expected_files))
+        self.assertEqual(len(files), len(expected_files))
 
     def test_get_decorated_classes(self):
         routes = get_decorated_classes(include_tests=True)
@@ -76,7 +78,7 @@ class TestApi(TestCase):
 
         # Checking to the ProductsController is available in the routes.
         for route in routes:
-            self.assertNotEquals(ProductsController, route['object'])
+            self.assertNotEqual(ProductsController, route['object'])
 
     @override_settings(ROOT_URLCONF=__name__)
     def testing_auto_register_urls(self):
@@ -92,4 +94,4 @@ class TestApi(TestCase):
         )
 
         # Checking that the reverse method works for auto register routes.
-        self.assertEquals(reverse('blogs'), '/api/test/blogs')
+        self.assertEqual(reverse('blogs'), '/api/test/blogs')
