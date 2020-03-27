@@ -1,7 +1,0 @@
-action: py38-django22, msg: envreport
-cwd: /Applications/MAMP/htdocs/djangoTesting/django-decorated-router
-cmd: /Applications/MAMP/htdocs/djangoTesting/django-decorated-router/.tox/venvs/py38-django22/bin/python -m pip freeze
-Django==2.2.11
-django-decorated-router==0.0.1.dev0
-pytz==2019.3
-sqlparse==0.3.1
