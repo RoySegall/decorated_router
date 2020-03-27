@@ -1,0 +1,17 @@
+action: py38-django30, msg: installpkg
+cwd: /Applications/MAMP/htdocs/djangoTesting/django-decorated-router
+cmd: /Applications/MAMP/htdocs/djangoTesting/django-decorated-router/.tox/venvs/py38-django30/bin/python -m pip install --no-deps -U .tox/.tmp/package/1/django-decorated-router-0.0.1.dev0.zip
+Processing ./.tox/.tmp/package/1/django-decorated-router-0.0.1.dev0.zip
+Building wheels for collected packages: django-decorated-router
+  Building wheel for django-decorated-router (setup.py): started
+  Building wheel for django-decorated-router (setup.py): finished with status 'done'
+  Created wheel for django-decorated-router: filename=django_decorated_router-0.0.1.dev0-cp38-none-any.whl size=9860 sha256=5db7a772551cbd75cda99062dc453ea6104644497fc2bdffdbc4f0d9a44e908a
+  Stored in directory: /Users/roysegall/Library/Caches/pip/wheels/12/c9/4f/5fe455bb67c877ac5052ecf1fa7301f7415928ac90cc80e716
+Successfully built django-decorated-router
+Installing collected packages: django-decorated-router
+  Found existing installation: django-decorated-router 0.0.1.dev0
+    Not uninstalling django-decorated-router at /Applications/MAMP/htdocs/djangoTesting/django-decorated-router, outside environment /Applications/MAMP/htdocs/djangoTesting/django-decorated-router/.tox/venvs/py38-django30/bin/..
+    Can't uninstall 'django-decorated-router'. No files were found to uninstall.
+Successfully installed django-decorated-router-0.0.1.dev0
+WARNING: You are using pip version 19.3.1; however, version 20.0.2 is available.
+You should consider upgrading via the 'pip install --upgrade pip' command.

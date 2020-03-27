@@ -1,0 +1,11 @@
+action: py38-djangomaster, msg: getenv
+cwd: /Applications/MAMP/htdocs/djangoTesting/django-decorated-router
+cmd: /Applications/MAMP/htdocs/djangoTesting/django-decorated-router/.tox/venvs/py38-djangomaster/bin/python -m pip install https://github.com/django/django/archive/master.tar.gz -rrequirements.txt
+Collecting https://github.com/django/django/archive/master.tar.gz
+/Applications/MAMP/htdocs/djangoTesting/django-decorated-router/.tox/venvs/py38-djangomaster/lib/python3.8/site-packages/pip/_vendor/msgpack/fallback.py:133: DeprecationWarning: encoding is deprecated, Use raw=False instead.
+  unpacker = Unpacker(None, max_buffer_size=len(packed), **kwargs)
+ERROR: Operation cancelled by user
+/Applications/MAMP/htdocs/djangoTesting/django-decorated-router/.tox/venvs/py38-djangomaster/lib/python3.8/site-packages/pip/_internal/cli/base_command.py:185: ResourceWarning: unclosed <ssl.SSLSocket fd=8, family=AddressFamily.AF_INET, type=SocketKind.SOCK_STREAM, proto=0, laddr=('10.0.0.9', 65488), raddr=('140.82.114.9', 443)>
+  return ERROR
+WARNING: You are using pip version 19.3.1; however, version 20.0.2 is available.
+You should consider upgrading via the 'pip install --upgrade pip' command.

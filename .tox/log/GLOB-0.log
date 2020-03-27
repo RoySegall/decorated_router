@@ -1,6 +1,6 @@
 action: GLOB, msg: packaging
 cwd: /Applications/MAMP/htdocs/djangoTesting/django-decorated-router
-cmd: /Users/roysegall/.virtualenvs/djangoTesting/bin/python3.8 setup.py sdist --formats=zip --dist-dir /Applications/MAMP/htdocs/djangoTesting/django-decorated-router/.tox/dist
+cmd: /Users/roysegall/.virtualenvs/djangoTesting/bin/python3.8 setup.py sdist --formats=zip --dist-dir .tox/dist
 running sdist
 running egg_info
 writing django_decorated_router.egg-info/PKG-INFO
@@ -49,8 +49,7 @@ copying django_decorated_router.egg-info/dependency_links.txt -> django-decorate
 copying django_decorated_router.egg-info/not-zip-safe -> django-decorated-router-0.0.1.dev0/django_decorated_router.egg-info
 copying django_decorated_router.egg-info/top_level.txt -> django-decorated-router-0.0.1.dev0/django_decorated_router.egg-info
 Writing django-decorated-router-0.0.1.dev0/setup.cfg
-creating /Applications/MAMP/htdocs/djangoTesting/django-decorated-router/.tox/dist
-creating '/Applications/MAMP/htdocs/djangoTesting/django-decorated-router/.tox/dist/django-decorated-router-0.0.1.dev0.zip' and adding 'django-decorated-router-0.0.1.dev0' to it
+creating '.tox/dist/django-decorated-router-0.0.1.dev0.zip' and adding 'django-decorated-router-0.0.1.dev0' to it
 adding 'django-decorated-router-0.0.1.dev0'
 adding 'django-decorated-router-0.0.1.dev0/django_decorated_router.egg-info'
 adding 'django-decorated-router-0.0.1.dev0/decorated_router'
