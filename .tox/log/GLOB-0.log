@@ -3,9 +3,11 @@ cwd: /Applications/MAMP/htdocs/djangoTesting/django-decorated-router
 cmd: /Users/roysegall/.virtualenvs/djangoTesting/bin/python3.8 setup.py sdist --formats=zip --dist-dir .tox/dist
 running sdist
 running egg_info
+creating django_decorated_router.egg-info
 writing django_decorated_router.egg-info/PKG-INFO
 writing dependency_links to django_decorated_router.egg-info/dependency_links.txt
 writing top-level names to django_decorated_router.egg-info/top_level.txt
+writing manifest file 'django_decorated_router.egg-info/SOURCES.txt'
 reading manifest file 'django_decorated_router.egg-info/SOURCES.txt'
 writing manifest file 'django_decorated_router.egg-info/SOURCES.txt'
 running check

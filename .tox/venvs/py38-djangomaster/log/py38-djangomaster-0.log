@@ -1,9 +1,26 @@
 action: py38-djangomaster, msg: getenv
 cwd: /Applications/MAMP/htdocs/djangoTesting/django-decorated-router/.tox/venvs
 cmd: /Users/roysegall/.virtualenvs/djangoTesting/bin/python3.8 -m virtualenv --no-download --python /Users/roysegall/.virtualenvs/djangoTesting/bin/python3.8 py38-djangomaster
+Traceback (most recent call last):
+  File "/Library/Frameworks/Python.framework/Versions/3.8/lib/python3.8/runpy.py", line 193, in _run_module_as_main
+    return _run_code(code, main_globals, None,
+  File "/Library/Frameworks/Python.framework/Versions/3.8/lib/python3.8/runpy.py", line 86, in _run_code
+    exec(code, run_globals)
+  File "/Users/roysegall/.virtualenvs/djangoTesting/lib/python3.8/site-packages/virtualenv.py", line 2634, in <module>
+    main()
+  File "/Users/roysegall/.virtualenvs/djangoTesting/lib/python3.8/site-packages/virtualenv.py", line 860, in main
+    create_environment(
+  File "/Users/roysegall/.virtualenvs/djangoTesting/lib/python3.8/site-packages/virtualenv.py", line 1162, in create_environment
+    install_python(home_dir, lib_dir, inc_dir, bin_dir, site_packages=site_packages, clear=clear, symlink=symlink)
+  File "/Users/roysegall/.virtualenvs/djangoTesting/lib/python3.8/site-packages/virtualenv.py", line 1684, in install_python
+    proc_stdout, proc_stderr = proc.communicate()
+  File "/Library/Frameworks/Python.framework/Versions/3.8/lib/python3.8/subprocess.py", line 1011, in communicate
+    stdout = self.stdout.read()
+KeyboardInterrupt
 Already using interpreter /Users/roysegall/.virtualenvs/djangoTesting/bin/python3.8
 Using real prefix '/Library/Frameworks/Python.framework/Versions/3.8'
 New python executable in /Applications/MAMP/htdocs/djangoTesting/django-decorated-router/.tox/venvs/py38-djangomaster/bin/python3.8
 Also creating executable in /Applications/MAMP/htdocs/djangoTesting/django-decorated-router/.tox/venvs/py38-djangomaster/bin/python
-Installing setuptools, pip, wheel...
-done.
+/Library/Frameworks/Python.framework/Versions/3.8/lib/python3.8/subprocess.py:942: ResourceWarning: subprocess 26482 is still running
+  _warn("subprocess %s is still running" % self.pid,
+sys:1: ResourceWarning: unclosed file <_io.BufferedReader name=4>
