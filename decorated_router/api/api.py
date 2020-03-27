@@ -48,36 +48,34 @@ def get_decorated_classes(routes_folder=getcwd(), include_tests=False):
             .replace('.py', '') \
             .replace(os.path.sep, '.')
 
-        try:
-            # Import the module and inspect the members (the object which were
-            # imported).
+        # Import the module and inspect the members (the object which were
+        # imported).
+        if import_path == 'setup':
+            # This one breaks when running tests with tox. Don't know why but
+            # I'll go with the flow.
+            continue
 
-            if import_path == 'setup':
-                # HUH
+        try:
+            __import__(import_path)
+        except Exception as e:
+            logging.error(f"An error during importing the file: {e}")
+            continue
+
+        for name, obj in inspect.getmembers(sys.modules[import_path]):
+            if not inspect.isclass(obj):
+                # This is not a class. Skip.
                 continue
 
-            __import__(import_path)
+            if not issubclass(obj, View):
+                continue
 
-            for name, obj in inspect.getmembers(sys.modules[import_path]):
-                if not inspect.isclass(obj):
-                    # This is not a class. Skip.
-                    continue
+            if not hasattr(obj, 'decorated_url_data'):
+                continue
 
-                if not issubclass(obj, View):
-                    continue
-
-                try:
-                    routes.append({
-                        'path': obj.decorated_url_data,
-                        'object': obj
-                    })
-                except Exception as e:
-                    # todo: Don't fail on exception.
-                    logging.info(e)
-
-        except Exception as e:
-            # todo: Don't fail on exception.
-            logging.info(e)
+            routes.append({
+                'path': obj.decorated_url_data,
+                'object': obj
+            })
 
     return routes
 
