@@ -8,8 +8,8 @@ with codecs_open('README.md', encoding='utf-8') as f:
 
 
 setup(
-    name='django-decorated-router',
-    version='0.0.1',
+    name='django-decorated-routes',
+    version='0.0.2',
     description=u"Auto registering routes in Django",
     long_description=long_description,
     long_description_content_type="text/markdown",
